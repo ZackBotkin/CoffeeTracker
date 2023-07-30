@@ -9,8 +9,8 @@ class ContextManager(object):
         self.query_runner.create_all_tables()
 
 
-    def record_coffee(self, description, oz):
-        self.query_runner.insert_coffee(description, oz)
+    def record_coffee(self, description, oz, date=None):
+        self.query_runner.insert_coffee(description, oz, date)
 
     def get_coffees(self):
         coffees = self.query_runner.get_coffees()
