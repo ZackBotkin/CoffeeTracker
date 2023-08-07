@@ -12,6 +12,6 @@ class ContextManager(object):
     def record_coffee(self, description, oz, date=None):
         self.query_runner.insert_coffee(description, oz, date)
 
-    def get_coffees(self):
-        coffees = self.query_runner.get_coffees()
+    def get_coffees(self, date=None):
+        coffees = self.query_runner.get_coffees(date)
         return coffees

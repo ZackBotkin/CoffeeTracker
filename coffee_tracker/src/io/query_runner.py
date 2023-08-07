@@ -37,6 +37,8 @@ class QueryRunner(object):
         sql_str = "INSERT INTO coffees ('date', 'description', 'oz') VALUES ('%s', '%s', '%s')" % (date, description, oz)
         self.run_sql(sql_str)
 
-    def get_coffees(self):
+    def get_coffees(self, date=None):
         sql_str = "SELECT * FROM coffees"
+        if date is not None:
+            sql_str += " WHERE date = '%s'" % date
         return self.fetch_sql(sql_str)
